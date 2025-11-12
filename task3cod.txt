@@ -1,0 +1,34 @@
+# Simple Movie Recommendation System (Content-Based)
+
+movies = [
+    {"title": "Inception", "genre": ["Thriller", "Sci-Fi", "Action"]},
+    {"title": "The Dark Knight", "genre": ["Action", "Thriller"]},
+    {"title": "Interstellar", "genre": ["Sci-Fi", "Drama"]},
+    {"title": "Titanic", "genre": ["Romance", "Drama"]},
+    {"title": "The Notebook", "genre": ["Romance"]},
+    {"title": "The Conjuring", "genre": ["Horror", "Thriller"]},
+    {"title": "Get Out", "genre": ["Thriller", "Horror", "Mystery"]},
+    {"title": "Avengers: Endgame", "genre": ["Action", "Adventure", "Sci-Fi"]},
+    {"title": "Joker", "genre": ["Drama", "Thriller"]},
+    {"title": "Deadpool", "genre": ["Comedy", "Action"]},
+    {"title": "The Hangover", "genre": ["Comedy"]},
+    {"title": "Gone Girl", "genre": ["Thriller", "Mystery"]},
+    {"title": "Shutter Island", "genre": ["Thriller", "Mystery"]},
+    {"title": "Mission Impossible: Fallout", "genre": ["Action", "Thriller"]},
+    {"title": "The Matrix", "genre": ["Action", "Sci-Fi"]},
+]
+
+print("🎬 Welcome to the Movie Recommendation System!")
+print("Available genres: Action, Comedy, Romance, Drama, Sci-Fi, Horror, Thriller, Mystery, Adventure")
+user_genre = input("Enter your favorite genre: ").strip().title()
+
+recommended_movies = [movie["title"] for movie in movies if user_genre in movie["genre"]]
+
+if recommended_movies:
+    print(f"\n🔥 Top {user_genre} movie recommendations for you:")
+    for idx, movie in enumerate(recommended_movies, start=1):
+        print(f"{idx}. {movie}")
+else:
+    print(f"😕 Sorry, we don't have movies in the '{user_genre}' genre yet.")
+
+print("\nThank you for using the Movie Recommender!")
